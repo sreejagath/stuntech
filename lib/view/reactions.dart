@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ReactionPage extends StatelessWidget {
   const ReactionPage({Key? key}) : super(key: key);
@@ -23,12 +26,12 @@ class ReactionPage extends StatelessWidget {
         title: const Text('Reviews', style: TextStyle(color: Colors.black)),
       ),
       body: Column(children: [
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height * 0.9,
           child: ListView.builder(
             itemCount: 10,
             itemBuilder: (context, index) {
-              return ReviewData();
+              return const ReviewData();
             },
           ),
         )
@@ -51,12 +54,12 @@ class ReviewData extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Emojis(),
+            const Emojis(),
             const SizedBox(
               height: 10,
             ),
             Row(
-              children: [
+              children: const [
                 Text('Youshi Kabayashi'),
                 Spacer(),
                 Text('YYYY/MM/DD'),
@@ -65,9 +68,9 @@ class ReviewData extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width * 0.9,
-              child: Text('''Reviews of the working workers are displayed here.\n You can check.'''))
+              child: Text('''Reviews of the working workers are displayed here.\n You can check.''', style: TextStyle(color: Colors.black, fontFamily: GoogleFonts.notoSans().fontFamily),),)
           ],
         ));
   }

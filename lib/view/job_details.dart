@@ -13,7 +13,6 @@ class JobDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     var selectItems = ['Business', 'Job', 'Flow of', 'trea', 'Application'];
     return Scaffold(
       body: SingleChildScrollView(
@@ -113,7 +112,8 @@ class JobDetails extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 13,
                                     color: const Color(0xFF303030),
-                                    fontFamily: GoogleFonts.notoSans().fontFamily,
+                                    fontFamily:
+                                        GoogleFonts.notoSans().fontFamily,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -722,21 +722,91 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
             const SizedBox(
               width: 10,
             ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.7,
-              height: 40,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                color: Color(0xFFFAAA14),
-              ),
-              alignment: Alignment.center,
-              child: Text(
-                'Apply',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.white,
-                  fontFamily: GoogleFonts.notoSans().fontFamily,
-                  fontWeight: FontWeight.w500,
+            GestureDetector(
+              onTap: () {
+                print("Please Upload the Image");
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        content: Container(
+                          height: MediaQuery.of(context).size.height * 0.35,
+                          child: Column(children: [
+                            Image.network(
+                              'http://clipart-library.com/images/dc95gpLc7.png',
+                              height: 100,
+                              width: 100,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text('The application is completed!',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: black,
+                                  fontFamily: GoogleFonts.notoSans().fontFamily,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              width: 300,
+                              alignment: Alignment.center,
+                              child: Text(
+                                '''Until the application result arrives from the long-term care office
+ Please wait.''',
+                                textAlign: TextAlign.center,
+                              ),
+                              
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            GestureDetector(
+                              onTap:(){
+                                Get.back();
+                              },
+                              child: Container(
+                                width: 300,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Color(0xFF003566),
+                                ),
+                                alignment: Alignment.center,
+                                child: Text('Application',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.white,
+                                      fontFamily: GoogleFonts.notoSans().fontFamily,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
+                          ]),
+                        ),
+                      );
+                    });
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.7,
+                height: 40,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  color: Color(0xFFFAAA14),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  'Apply',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.white,
+                    fontFamily: GoogleFonts.notoSans().fontFamily,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),
