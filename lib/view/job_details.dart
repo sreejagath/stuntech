@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stuntech/constants/color.dart';
+import 'package:stuntech/view/reactions.dart';
 
 class JobDetails extends StatelessWidget {
   const JobDetails({Key? key}) : super(key: key);
@@ -202,82 +204,87 @@ class JobDetails extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: [
-                  Row(
-                    children: const [
-                      Text(
-                        '😄',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
+            GestureDetector(
+              onTap: () {
+                Get.to(()=> const Reactions());
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    Row(
+                      children: const [
+                        Text(
+                          '😄',
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        '999',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                        SizedBox(
+                          width: 10,
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Row(
-                    children: const [
-                      Text(
-                        '🙂',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
+                        Text(
+                          '999',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        '999+',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                      ],
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Row(
+                      children: const [
+                        Text(
+                          '🙂',
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Row(
-                    children: const [
-                      Text(
-                        '😔',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
+                        SizedBox(
+                          width: 10,
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        '999',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                        Text(
+                          '999+',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const Spacer(),
-                  const Icon(Icons.arrow_forward_ios, color: Colors.grey)
-                ],
+                      ],
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Row(
+                      children: const [
+                        Text(
+                          '😔',
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          '999',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    const Icon(Icons.arrow_forward_ios, color: Colors.grey)
+                  ],
+                ),
               ),
             ),
             const SizedBox(
@@ -313,7 +320,7 @@ class JobDetails extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.9,
                           child: Text(
                               '''We operate about 80 long-term care facilities in the Chubu, Kanto, and Kansai regions, mainly in the Tokai region. We provide "free relocation" long-term care services that take advantage of our strengths in the three major metropolitan areas. In addition to practicing care tailored to each user, a support body that allows families to leave it with peace of mind.''',
@@ -378,7 +385,7 @@ class JobDetails extends StatelessWidget {
                           )),
                     ],
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width * 0.9,
                     height: 50,
                     child: ListView(
@@ -433,6 +440,315 @@ class JobDetails extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text('Flow of the day',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(children: [
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            child: const Text(
+                                '''・ Guidance of rehabilitation equipment
+・ Document work
+・ Pick-up (using Sienta for small AT cars)
+ * No bathing or meal assistance 
+
+ (The flow of the day)
+ Around 8:00 Departure from the office to pick up the user
+ 8: 45-11: 50 Morning session
+ 11: 50 ~ 13: 00 Sending and welcoming you in the afternoon
+ 13: 00-16: 05 Afternoon
+ 16: 05 ～ Sending and cleaning up the office (* Floor cleaning is Roomba)'''),
+                          ),
+                        ]),
+                  ]),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text('treatment',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text('Application conditions Qualifications',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(children: [
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Belongings',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: black,
+                                fontFamily: GoogleFonts.notoSans().fontFamily,
+                                fontWeight: FontWeight.bold,
+                              ))
+                        ])
+                  ]),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(children: const [
+                    Text('''・Ballpoint pen
+ ·  Notepad
+ ·  Hand towel
+・ Pharmaceutical dictionary
+・ Bathing assistance clothes
+・ Change of clothes
+ ·  clear file''')
+                  ]),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const ExpansionTile(
+                      title: Text('Working condition notification')),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text('how to access',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey),
+                    alignment: Alignment.center,
+                    child: const Text('Map',
+                        style: TextStyle(fontSize: 20, color: Colors.white)),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10.0),
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        child: Text(
+                            'Sapporo City, Hokkaido XXXX Ward XXX Article XX Chome XX No. XX',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: black,
+                              fontFamily: GoogleFonts.notoSans().fontFamily,
+                              fontWeight: FontWeight.w500,
+                            )),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        child: Text('''・ Walk “XX” minutes from “XXXXXX” station
+・ "XX" minutes by car from "XXXXXX"
+・ From “XXXXXX” to “XX” minutes by motorcycle''',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: black,
+                              fontFamily: GoogleFonts.notoSans().fontFamily,
+                              fontWeight: FontWeight.w500,
+                            )),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text('Office contact no.',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(children: [
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('000 000 000 0',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: black,
+                                fontFamily: GoogleFonts.notoSans().fontFamily,
+                                fontWeight: FontWeight.w500,
+                              ))
+                        ])
+                  ]),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text('transportation',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 50,
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        CareGivingItem(
+                          title: 'On foot',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'bicycle',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'Car',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'Bike',
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text('Notes',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: Text(
+                        '''
+Flashy hairstyles such as blonde hair are not permitted by regulation. 
+
+ As a countermeasure against infection of the new corona, please refrain from applying for those who meet the following guidelines.・ Those who have fever or cough
+・ People who have similar symptoms, such as those living together
+・ Those who are recognized as close contacts
+・ Those who have traveled within the past 14 days''',
+                        style: TextStyle(
+                          fontFamily: GoogleFonts.notoSans().fontFamily,
+                          fontSize: 12,
+                        ),
+                      ),
+                    )
+                  ]),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text('Employment Information',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey),
+                    alignment: Alignment.center,
+
                   )
                 ])),
             const SizedBox(
@@ -446,7 +762,7 @@ class JobDetails extends StatelessWidget {
         height: 60,
         child: Row(
           children: [
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width * 0.2,
               child: const Icon(
                 Icons.favorite_border,
