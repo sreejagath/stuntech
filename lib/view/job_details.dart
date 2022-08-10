@@ -13,6 +13,8 @@ class JobDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    var selectItems = ['Business', 'Job', 'Flow of', 'trea', 'Application'];
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -97,77 +99,102 @@ class JobDetails extends StatelessWidget {
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
                   height: 20,
-                  color: const Color(0xFFEEAB40).withOpacity(0.1),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: selectItems.length,
+                          itemBuilder: (context, index) {
+                            return Row(
+                              children: [
+                                Text(
+                                  selectItems[index],
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: const Color(0xFF303030),
+                                    fontFamily: GoogleFonts.notoSans().fontFamily,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 )),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text('Business establishment overview',
+            // const SizedBox(
+            //   height: 10,
+            // ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text('Business establishment overview',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.w500,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        child: Text(
+                            '''We operate about 80 long-term care facilities in the Chubu, Kanto, and Kansai regions, mainly in the Tokai region. We provide "free relocation" long-term care services that take advantage of our strengths in the three major metropolitan areas. In addition to practicing care tailored to each user, a support body that allows families to leave it with peace of mind.''',
                             style: TextStyle(
                               fontSize: 12,
                               color: black,
                               fontFamily: GoogleFonts.notoSans().fontFamily,
                               fontWeight: FontWeight.w500,
                             )),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.9,
-                          child: Text(
-                              '''We operate about 80 long-term care facilities in the Chubu, Kanto, and Kansai regions, mainly in the Tokai region. We provide "free relocation" long-term care services that take advantage of our strengths in the three major metropolitan areas. In addition to practicing care tailored to each user, a support body that allows families to leave it with peace of mind.''',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: black,
-                                fontFamily: GoogleFonts.notoSans().fontFamily,
-                                fontWeight: FontWeight.w500,
-                              )),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        Text('Job description',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: black,
-                              fontFamily: GoogleFonts.notoSans().fontFamily,
-                              fontWeight: FontWeight.bold,
-                            )),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text('''General long-term care work in group homes
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text('Job description',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text('''General long-term care work in group homes
 ・ Meal assis
 ・ Bathing assis
 ・ Support for cleaning, washing, recreation, etc.
 '''),
-                            ]),
-                      ],
-                    ),
-                  ],
-                ),
+                          ]),
+                    ],
+                  ),
+                ],
               ),
             ),
             Divider(
@@ -197,19 +224,24 @@ class JobDetails extends StatelessWidget {
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Washing'),SizedBox(
+                      CareGivingItem(title: 'Washing'),
+                      SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Recreation'),SizedBox(
+                      CareGivingItem(title: 'Recreation'),
+                      SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Transportation'),SizedBox(
+                      CareGivingItem(title: 'Transportation'),
+                      SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Food'),SizedBox(
+                      CareGivingItem(title: 'Food'),
+                      SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Clothing'),SizedBox(
+                      CareGivingItem(title: 'Clothing'),
+                      SizedBox(
                         width: 10,
                       ),
                       CareGivingItem(title: 'Other'),
@@ -270,6 +302,38 @@ class JobDetails extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
+                  Wrap(
+                    direction: Axis.horizontal,
+                    children: const [
+                      CareGivingItem(title: 'treatment 1'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: 'treatment 2'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: 'sample treatment'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: 'treatment 3'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: 'treatment 4'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: 'treatment 5'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Container(),
                   const SizedBox(
                     height: 10,
@@ -287,6 +351,23 @@ class JobDetails extends StatelessWidget {
                   ),
                   const SizedBox(
                     height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Wrap(
+                        direction: Axis.horizontal,
+                        children: const [
+                          CareGivingItem(title: 'Social work'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          CareGivingItem(title: 'long term foodist'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                   Row(children: [
                     Column(
@@ -508,99 +589,113 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
                     height: 10,
                   ),
                   Container(
-                    height: 400,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.shade200,
-                            blurRadius: 10,
-                            spreadRadius: 1,
-                          )
-                        ],
-                        color: Colors.white),
-                    clipBehavior: Clip.hardEdge,
-                    alignment: Alignment.center,
-                    child: Column(children: [
-                      Image.network('https://cdn.visitingangels.com/cgcimages/home-care-nurse-seniors-main.jpg', height: 170, fit: BoxFit.fill),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
+                      height: 400,
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade200,
+                              blurRadius: 10,
+                              spreadRadius: 1,
+                            )
+                          ],
+                          color: Colors.white),
+                      clipBehavior: Clip.hardEdge,
+                      alignment: Alignment.center,
+                      child: Column(
                         children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                            child: Text('Long-term care pay nursing home Himawari Club long-term care / helper recruitment (regular employment / part-time)',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: black,
-                                  fontFamily: GoogleFonts.notoSans().fontFamily,
-                                  fontWeight: FontWeight.bold,
-                                )),
+                          Image.network(
+                              'https://cdn.visitingangels.com/cgcimages/home-care-nurse-seniors-main.jpg',
+                              height: 170,
+                              fit: BoxFit.fill),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                padding: const EdgeInsets.only(
+                                    left: 10.0, right: 10.0),
+                                child: Text(
+                                    'Long-term care pay nursing home Himawari Club long-term care / helper recruitment (regular employment / part-time)',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: black,
+                                      fontFamily:
+                                          GoogleFonts.notoSans().fontFamily,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 10.0, right: 10.0),
+                            child: Row(
+                              children: const [
+                                CareGivingItem(
+                                    title: 'Paid nursing home for elderly'),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 10.0, right: 10.0),
+                            child: Row(
+                              children: const [
+                                Text(
+                                    '3-916-17 Shinonome-cho, Sapporo-shi, Hokkaido')
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 10.0, right: 10.0),
+                            child: Row(
+                              children: const [
+                                Text('Regular staff'),
+                                Spacer(),
+                                Text('Monthly income 250,000-270,000')
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 10.0, right: 10.0),
+                            child: Row(
+                              children: [
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.6,
+                                  child: Text(
+                                      'Paid nursing home for the elderly Solasto Komatsubara',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.grey,
+                                        fontFamily:
+                                            GoogleFonts.notoSans().fontFamily,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: Row(
-                          children: const [
-                            CareGivingItem(title: 'Paid nursing home for elderly'),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: Row(
-                          children: const [
-                            Text('3-916-17 Shinonome-cho, Sapporo-shi, Hokkaido')
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: Row(
-                          children: const [
-                            Text('Regular staff'),
-                            Spacer(),
-                            Text('Monthly income 250,000-270,000')
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.6,
-                              child: Text('Paid nursing home for the elderly Solasto Komatsubara',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.grey,
-                                    fontFamily: GoogleFonts.notoSans().fontFamily,
-                                    fontWeight: FontWeight.bold,
-                                  )
-                              ),
-                            ),
-                            
-                          ],
-                        ),
-                      ),
-                    ],)
-                  ),
+                      )),
                   const SizedBox(
                     height: 10,
                   ),
