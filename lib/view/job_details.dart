@@ -159,7 +159,8 @@ class JobDetails extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.width * 0.2,
                         decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(Radius.circular(5)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5)),
                           border: Border.all(
                             color: const Color(0xFFFAAA14),
                           ),
@@ -279,11 +280,169 @@ class JobDetails extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  height: 20,
+                  color: const Color(0xFFEEAB40).withOpacity(0.1),
+                )),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text('Business establishment overview',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: black,
+                              fontFamily: GoogleFonts.notoSans().fontFamily,
+                              fontWeight: FontWeight.w500,
+                            )),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.9,
+                          child: Text(
+                              '''We operate about 80 long-term care facilities in the Chubu, Kanto, and Kansai regions, mainly in the Tokai region. We provide "free relocation" long-term care services that take advantage of our strengths in the three major metropolitan areas. In addition to practicing care tailored to each user, a support body that allows families to leave it with peace of mind.''',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: black,
+                                fontFamily: GoogleFonts.notoSans().fontFamily,
+                                fontWeight: FontWeight.w500,
+                              )),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Text('Job description',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: black,
+                              fontFamily: GoogleFonts.notoSans().fontFamily,
+                              fontWeight: FontWeight.bold,
+                            )),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text('''General long-term care work in group homes
+・ Meal assis
+・ Bathing assis
+・ Support for cleaning, washing, recreation, etc.
+'''),
+                            ]),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Divider(
+              color: Colors.grey.withOpacity(0.1),
+              thickness: 1,
+            ),
+            Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(children: [
+                  Row(
+                    children: [
+                      Text('Caregiving items',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ],
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 50,
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        CareGivingItem(
+                          title: 'Cleaning',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'Oral Care',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'Recreation',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'Recreation',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'Recreation',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'Recreation',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'Recreation',
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CareGivingItem(
+                          title: 'Recreation',
+                        ),
+                      ],
+                    ),
+                  )
+                ])),
+            const SizedBox(
+              height: 50,
+            ),
           ],
         ),
       ),
       bottomSheet: BottomAppBar(
-          child: Container(
+          child: SizedBox(
         height: 60,
         child: Row(
           children: [
@@ -320,5 +479,32 @@ class JobDetails extends StatelessWidget {
         ),
       )),
     );
+  }
+}
+
+class CareGivingItem extends StatelessWidget {
+  const CareGivingItem({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 20,
+        padding: const EdgeInsets.all(10.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: const Color(0xFFEEAB40).withOpacity(0.1),
+        ),
+        child: Text(title,
+            style: TextStyle(
+              color: mainText,
+              fontSize: 12,
+              fontFamily: GoogleFonts.notoSans().fontFamily,
+              fontWeight: FontWeight.w500,
+            )));
   }
 }
