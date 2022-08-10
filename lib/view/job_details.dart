@@ -6,6 +6,7 @@ import 'package:stuntech/view/reactions.dart';
 import 'package:stuntech/view/widgets/care_giving.dart';
 import 'package:stuntech/view/widgets/header.dart';
 import 'package:stuntech/view/widgets/job_detail.dart';
+import 'package:stuntech/view/widgets/reaction.dart';
 
 class JobDetails extends StatelessWidget {
   const JobDetails({Key? key}) : super(key: key);
@@ -88,7 +89,7 @@ class JobDetails extends StatelessWidget {
                 ],
               ),
             ),
-            Reactions(),
+            const Reactions(),
             const SizedBox(
               height: 10,
             ),

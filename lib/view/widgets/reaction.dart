@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stuntech/view/reactions.dart';
 
 class Reactions extends StatelessWidget {
   const Reactions({
@@ -10,7 +11,7 @@ class Reactions extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => const Reactions());
+        Get.to(() => const ReactionPage());
       },
       child: Padding(
         padding: const EdgeInsets.all(10.0),

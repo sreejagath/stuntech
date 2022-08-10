@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Reactions extends StatelessWidget {
-  const Reactions({Key? key}) : super(key: key);
+class ReactionPage extends StatelessWidget {
+  const ReactionPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(); 
+    return Scaffold(
+      body: Column(
+        children: [
+
+        ]
+      ),
+    ); 
   }
 }
