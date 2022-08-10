@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Get.to(()=>const JobDetails());
         },
         tooltip: 'Increment',
-        child:  Icon(Icons.arrow_forward_ios),
+        child:  const Icon(Icons.arrow_forward_ios),
       ),
     );
   }

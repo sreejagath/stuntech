@@ -206,7 +206,7 @@ class JobDetails extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Get.to(()=> const Reactions());
+                Get.to(() => const Reactions());
               },
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -742,14 +742,101 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
                     height: 10,
                   ),
                   Container(
-                    height: 200,
+                    height: 360,
                     width: MediaQuery.of(context).size.width * 0.9,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.shade200,
+                            blurRadius: 10,
+                            spreadRadius: 1,
+                          )
+                        ],
+                        color: Colors.white),
+                    clipBehavior: Clip.hardEdge,
                     alignment: Alignment.center,
-
-                  )
+                    child: Column(children: [
+                      Image.network('https://cdn.visitingangels.com/cgcimages/home-care-nurse-seniors-main.jpg', height: 170, fit: BoxFit.fill),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                            child: Text('Long-term care pay nursing home Himawari Club long-term care / helper recruitment (regular employment / part-time)',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: black,
+                                  fontFamily: GoogleFonts.notoSans().fontFamily,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: const [
+                          CareGivingItem(title: 'Paid nursing home for elderly'),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Row(
+                          children: const [
+                            Text('3-916-17 Shinonome-cho, Sapporo-shi, Hokkaido')
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Row(
+                          children: [
+                            Text('Regular staff'),
+                            Spacer(),
+                            Column(children: [
+                              Text('Monthly income 250,000-270,000')
+                            ],)
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.6,
+                              child: Text('Paid nursing home for the elderly Solasto Komatsubara',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.grey,
+                                    fontFamily: GoogleFonts.notoSans().fontFamily,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                            ),
+                            
+                          ],
+                        ),
+                      ),
+                    ],)
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                 ])),
             const SizedBox(
               height: 50,
