@@ -13,19 +13,26 @@ class CareGivingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 40,
-        padding: const EdgeInsets.all(10.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: const Color(0xFFEEAB40).withOpacity(0.1),
+    return Column(
+      children: [
+        Container(
+            //height: 40,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: const Color(0xFFEEAB40).withOpacity(0.1),
+            ),
+            child: Text(title,
+                style: TextStyle(
+                  color: mainText,
+                  fontSize: 12,
+                  fontFamily: GoogleFonts.notoSans().fontFamily,
+                  fontWeight: FontWeight.w600,
+                ))),
+        const SizedBox(
+          height: 10,
         ),
-        child: Text(title,
-            style: TextStyle(
-              color: mainText,
-              fontSize: 12,
-              fontFamily: GoogleFonts.notoSans().fontFamily,
-              fontWeight: FontWeight.w500,
-            )));
+      ],
+    );
   }
 }

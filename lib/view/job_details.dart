@@ -23,24 +23,13 @@ class JobDetails extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  Text(
-                    '[Sapporo, Hokkaido] Nursing care business in a short stay (mainly bathing assistance), please!',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: GoogleFonts.notoSans().fontFamily,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        '6,000 yen',
+                        //'[Sapporo, Hokkaido] Nursing care business in a short stay (mainly bathing assistance), please!' ,
+                        '【北海道札幌市】ショートステイでの介護業       務 (主に入浴介助) お願いします！',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: GoogleFonts.notoSans().fontFamily,
                           fontWeight: FontWeight.bold,
                         ),
@@ -50,42 +39,70 @@ class JobDetails extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: [
-                      Container(
-                        color: const Color(0xFFEEAB40).withOpacity(0.1),
-                        padding: const EdgeInsets.all(10),
-                        child: Text(
-                          'Paid nursing home for elderly',
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: mainText,
-                            fontFamily: GoogleFonts.notoSans().fontFamily,
-                            fontWeight: FontWeight.w500,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          color: const Color(0xFFEEAB40).withOpacity(0.1),
+                          padding: const EdgeInsets.all(10),
+                          child: Text(
+                            '介護付き有料老人ホーム',
+                            //'Paid nursing home for elderly',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: mainText,
+                              fontFamily: GoogleFonts.notoSans().fontFamily,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  JobDetail(),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'Residential pay nursing home Himawari Club',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: const Color(0xFF303030).withOpacity(0.45),
-                          fontFamily: GoogleFonts.notoSans().fontFamily,
-                          fontWeight: FontWeight.w500,
+                        Spacer(),
+                        Text(
+                          '6,000円',
+                          //'6,000 yen',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                  ),
+                  // const SizedBox(
+                  //   height: 10,
+                  // ),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Column(
+                      children: [
+                        JobDetail(),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              '住宅型有料老人ホームひまわり倶楽部',
+                              //'Residential pay nursing home Himawari Club',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color:
+                                    const Color(0xFF303030).withOpacity(0.45),
+                                fontFamily: GoogleFonts.notoSans().fontFamily,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
@@ -137,26 +154,28 @@ class JobDetails extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text('Business establishment overview',
+                      Text('事業所概要',
+                          //'Business establishment overview',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.bold,
                           )),
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(
                     children: [
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Text(
-                            '''We operate about 80 long-term care facilities in the Chubu, Kanto, and Kansai regions, mainly in the Tokai region. We provide "free relocation" long-term care services that take advantage of our strengths in the three major metropolitan areas. In addition to practicing care tailored to each user, a support body that allows families to leave it with peace of mind.''',
+                            '''東海地方を中心に、中部・関東・関西で約80施設の介護施設を運営しております。当社は3大都市圏で展開している強みを活かした、「住み替え自由」の介護サービスを提供しています。また、ご利用者様ひとりひとりに沿ったケアの実践だけでなく、ご家族様にも安心して預けていただけるようなサポート体''',
+                            //'''We operate about 80 long-term care facilities in the Chubu, Kanto, and Kansai regions, mainly in the Tokai region. We provide "free relocation" long-term care services that take advantage of our strengths in the three major metropolitan areas. In addition to practicing care tailored to each user, a support body that allows families to leave it with peace of mind.''',
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 14,
                               color: black,
                               fontFamily: GoogleFonts.notoSans().fontFamily,
                               fontWeight: FontWeight.w500,
@@ -165,13 +184,14 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 30,
                   ),
                   Row(
                     children: [
-                      Text('Job description',
+                      Text('仕事の内容',
+                          //'Job description',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -179,18 +199,30 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(
                     children: [
                       Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text('''General long-term care work in group homes
-・ Meal assis
-・ Bathing assis
-・ Support for cleaning, washing, recreation, etc.
-'''),
+                          children: [
+                            Text('''グループホームでの介護業務全般
+・食事介助
+・入浴介助
+・掃除、洗濯、レクリエーション等の支援
+''',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: black,
+                                  fontFamily: GoogleFonts.notoSans().fontFamily,
+                                  fontWeight: FontWeight.w500,
+                                )
+//                               '''General long-term care work in group homes
+// ・ Meal assis
+// ・ Bathing assis
+// ・ Support for cleaning, washing, recreation, etc.
+// '''
+                                ),
                           ]),
                     ],
                   ),
@@ -206,9 +238,10 @@ class JobDetails extends StatelessWidget {
                 child: Column(children: [
                   Row(
                     children: [
-                      Text('Caregiving items',
+                      Text('介助項目',
+                          //'Caregiving items',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -216,45 +249,60 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Wrap(
                     children: const [
-                      CareGivingItem(title: 'Cleaning'),
+                      CareGivingItem(title: '清掃'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Washing'),
+                      CareGivingItem(title: '口腔ケア'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Recreation'),
+                      CareGivingItem(title: 'レクリエーション'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Transportation'),
+                      CareGivingItem(title: '夜勤'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Food'),
+                      CareGivingItem(title: 'リネン交換'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Clothing'),
+                      CareGivingItem(title: 'バイタル測定'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'Other'),
+                      CareGivingItem(title: '移動介助'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: '対話'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: '服薬管理'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: '介護記録'),
+                      SizedBox(
+                        width: 10,
+                      ),
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 30,
                   ),
                   Row(
                     children: [
-                      Text('Flow of the day',
+                      Text('1日の流れ',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -269,20 +317,38 @@ class JobDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            child: const Text(
-                                '''・ Guidance of rehabilitation equipment
-・ Document work
-・ Pick-up (using Sienta for small AT cars)
- * No bathing or meal assistance 
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              child: Text('''・リハビリ機器の誘導
+・書類業務
+・送迎（AT小型車のシエンタ使用）
+※入浴・食事介助なし
 
- (The flow of the day)
- Around 8:00 Departure from the office to pick up the user
- 8: 45-11: 50 Morning session
- 11: 50 ~ 13: 00 Sending and welcoming you in the afternoon
- 13: 00-16: 05 Afternoon
- 16: 05 ～ Sending and cleaning up the office (* Floor cleaning is Roomba)'''),
-                          ),
+（一日の流れ）
+8:00頃　ご利用者様をお迎えのため事業所出発
+8:45～11:50　午前の部
+11:50～13:00　送り・午後お方をお迎え
+13:00～16:05　午後の部
+16:05～　送り・事業所の片付け（※床掃除はルンバ）
+17:00頃　業務終了''',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: black,
+                                    fontFamily:
+                                        GoogleFonts.notoSans().fontFamily,
+                                    fontWeight: FontWeight.w500,
+                                  ))
+//                                 '''・ Guidance of rehabilitation equipment
+// ・ Document work
+// ・ Pick-up (using Sienta for small AT cars)
+//  * No bathing or meal assistance
+
+//  (The flow of the day)
+//  Around 8:00 Departure from the office to pick up the user
+//  8: 45-11: 50 Morning session
+//  11: 50 ~ 13: 00 Sending and welcoming you in the afternoon
+//  13: 00-16: 05 Afternoon
+//  16: 05 ～ Sending and cleaning up the office (* Floor cleaning is Roomba)'''),
+                              ),
                         ]),
                   ]),
                   const SizedBox(
@@ -290,9 +356,11 @@ class JobDetails extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text('treatment',
+                      Text(
+                        '待遇',
+                        //'treatment',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -340,9 +408,11 @@ class JobDetails extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text('Application conditions Qualifications',
+                      Text(
+                        '応募条件資格',
+                        //'Application conditions Qualifications',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -373,9 +443,11 @@ class JobDetails extends StatelessWidget {
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Belongings',
+                          Text(
+                            '持ち物',
+                            //'Belongings',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 14,
                                 color: black,
                                 fontFamily: GoogleFonts.notoSans().fontFamily,
                                 fontWeight: FontWeight.bold,
@@ -385,28 +457,45 @@ class JobDetails extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(children: const [
-                    Text('''・Ballpoint pen
- ·  Notepad
- ·  Hand towel
-・ Pharmaceutical dictionary
-・ Bathing assistance clothes
-・ Change of clothes
- ·  clear file''')
+                  Row(children:  [
+                    Text(
+                      '''・ボールペン
+・メモ帳
+・ハンドタオル
+・お薬辞典
+・入浴介助の服
+・着替え
+・クリアファイル''', 
+style: TextStyle(
+                                fontSize: 14,
+                                color: black,
+                                fontFamily: GoogleFonts.notoSans().fontFamily,
+                                fontWeight: FontWeight.w500,
+                              )
+//                       '''・Ballpoint pen
+//  ·  Notepad
+//  ·  Hand towel
+// ・ Pharmaceutical dictionary
+// ・ Bathing assistance clothes
+// ・ Change of clothes
+//  ·  clear file''',
+)
                   ]),
                   const SizedBox(
                     height: 10,
                   ),
                   const ExpansionTile(
-                      title: Text('Working condition notification')),
+                      title: Text('労働条件通知書')),
                   const SizedBox(
                     height: 10,
                   ),
                   Row(
                     children: [
-                      Text('how to access',
+                      Text(
+                        'アクセス方法',
+                        //'how to access',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -435,9 +524,10 @@ class JobDetails extends StatelessWidget {
                         padding: const EdgeInsets.all(10.0),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Text(
-                            'Sapporo City, Hokkaido XXXX Ward XXX Article XX Chome XX No. XX',
+                          '北海道札幌市 XXXX 区 XXX 条 XX 丁目 XX 番 XX 号',
+                            //'Sapporo City, Hokkaido XXXX Ward XXX Article XX Chome XX No. XX',
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 13,
                               color: black,
                               fontFamily: GoogleFonts.notoSans().fontFamily,
                               fontWeight: FontWeight.w500,
@@ -453,11 +543,15 @@ class JobDetails extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                         width: MediaQuery.of(context).size.width * 0.9,
-                        child: Text('''・ Walk “XX” minutes from “XXXXXX” station
-・ "XX" minutes by car from "XXXXXX"
-・ From “XXXXXX” to “XX” minutes by motorcycle''',
+                        child: Text(
+                          '''・”XXXXXX” 駅から徒歩 “XX” 分
+・”XXXXXX” から車で “XX” 分
+・”XXXXXX” からバイクで “XX” 分''',
+//                           '''・ Walk “XX” minutes from “XXXXXX” station
+// ・ "XX" minutes by car from "XXXXXX"
+// ・ From “XXXXXX” to “XX” minutes by motorcycle''',
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 13,
                               color: black,
                               fontFamily: GoogleFonts.notoSans().fontFamily,
                               fontWeight: FontWeight.w500,
@@ -466,13 +560,15 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 30,
                   ),
                   Row(
                     children: [
-                      Text('Office contact no.',
+                      Text(
+                        '事業所連絡先番号',
+                        //'Office contact no.',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -480,7 +576,7 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(children: [
                     Column(
@@ -488,7 +584,7 @@ class JobDetails extends StatelessWidget {
                         children: [
                           Text('000 000 000 0',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 14,
                                 color: black,
                                 fontFamily: GoogleFonts.notoSans().fontFamily,
                                 fontWeight: FontWeight.w500,
@@ -496,13 +592,13 @@ class JobDetails extends StatelessWidget {
                         ])
                   ]),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(
                     children: [
-                      Text('transportation',
+                      Text('交通手段',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -510,25 +606,25 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(
                     children: [
                       Wrap(
                         children: const [
-                          CareGivingItem(title: 'On foot'),
+                          CareGivingItem(title: '徒歩'),
                           SizedBox(
                             width: 10,
                           ),
-                          CareGivingItem(title: 'bicycle'),
+                          CareGivingItem(title: '自転車'),
                           SizedBox(
                             width: 10,
                           ),
-                          CareGivingItem(title: 'Car'),
+                          CareGivingItem(title: '車'),
                           SizedBox(
                             width: 10,
                           ),
-                          CareGivingItem(title: 'Bike'),
+                          CareGivingItem(title: 'バイク'),
                           SizedBox(
                             width: 10,
                           ),
@@ -537,13 +633,13 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 30,
                   ),
                   Row(
                     children: [
-                      Text('Notes',
+                      Text('注意事項',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -551,22 +647,29 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(children: [
                     Container(
                       width: MediaQuery.of(context).size.width * 0.9,
                       child: Text(
-                        '''
-Flashy hairstyles such as blonde hair are not permitted by regulation. 
+                        '''金髪などの派手な髪型は規定上、お断りいたします。
 
- As a countermeasure against infection of the new corona, please refrain from applying for those who meet the following guidelines.・ Those who have fever or cough
-・ People who have similar symptoms, such as those living together
-・ Those who are recognized as close contacts
-・ Those who have traveled within the past 14 days''',
+新型コロナの感染対策といたしまして、下記の要綱に当てはまる方のご応募をお控え頂きますようよろしくお願いいたします。 ・発熱や咳の症状のある方
+・同居人等、身近な方に同様の症状がある方
+・濃厚接触者と認められた方
+・過去14日以内に渡航歴がある方''',
+//                         '''
+// Flashy hairstyles such as blonde hair are not permitted by regulation. 
+
+//  As a countermeasure against infection of the new corona, please refrain from applying for those who meet the following guidelines.・ Those who have fever or cough
+// ・ People who have similar symptoms, such as those living together
+// ・ Those who are recognized as close contacts
+// ・ Those who have traveled within the past 14 days''',
                         style: TextStyle(
                           fontFamily: GoogleFonts.notoSans().fontFamily,
-                          fontSize: 12,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     )
@@ -576,9 +679,9 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
                   ),
                   Row(
                     children: [
-                      Text('Employment Information',
+                      Text('採用情報',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: black,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
                             fontWeight: FontWeight.bold,
@@ -619,9 +722,10 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
                                 padding: const EdgeInsets.only(
                                     left: 10.0, right: 10.0),
                                 child: Text(
-                                    'Long-term care pay nursing home Himawari Club long-term care / helper recruitment (regular employment / part-time)',
+                                  '介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（正規雇用 / パート）',
+                                    //'Long-term care pay nursing home Himawari Club long-term care / helper recruitment (regular employment / part-time)',
                                     style: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       color: black,
                                       fontFamily:
                                           GoogleFonts.notoSans().fontFamily,
@@ -639,7 +743,7 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
                             child: Row(
                               children: const [
                                 CareGivingItem(
-                                    title: 'Paid nursing home for elderly'),
+                                    title: '介護付き有料老人ホーム'),
                               ],
                             ),
                           ),
@@ -652,7 +756,9 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
                             child: Row(
                               children: const [
                                 Text(
-                                    '3-916-17 Shinonome-cho, Sapporo-shi, Hokkaido')
+                                  '北海道札幌市東雲町3丁目916番地17号'
+                                )
+                                    //'3-916-17 Shinonome-cho, Sapporo-shi, Hokkaido')
                               ],
                             ),
                           ),
@@ -664,9 +770,10 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
                                 const EdgeInsets.only(left: 10.0, right: 10.0),
                             child: Row(
                               children: const [
-                                Text('Regular staff'),
-                                Spacer(),
-                                Text('Monthly income 250,000-270,000')
+                                Text('正職員'),
+                                //Spacer(),
+                                SizedBox(width: 10,),
+                                Text('月収 25万 ~ 27万')
                               ],
                             ),
                           ),
@@ -682,9 +789,10 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
                                   width:
                                       MediaQuery.of(context).size.width * 0.6,
                                   child: Text(
-                                      'Paid nursing home for the elderly Solasto Komatsubara',
+                                    '介護付き有料老人ホームソラスト小松原',
+                                      //'Paid nursing home for the elderly Solasto Komatsubara',
                                       style: TextStyle(
-                                        fontSize: 12,
+                                        fontSize: 14,
                                         color: Colors.grey,
                                         fontFamily:
                                             GoogleFonts.notoSans().fontFamily,
@@ -758,13 +866,12 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
  Please wait.''',
                                 textAlign: TextAlign.center,
                               ),
-                              
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             GestureDetector(
-                              onTap:(){
+                              onTap: () {
                                 Get.back();
                               },
                               child: Container(
@@ -775,13 +882,15 @@ Flashy hairstyles such as blonde hair are not permitted by regulation.
                                   color: Color(0xFF003566),
                                 ),
                                 alignment: Alignment.center,
-                                child: Text('Application',
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.white,
-                                      fontFamily: GoogleFonts.notoSans().fontFamily,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                child: Text(
+                                  'Application',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white,
+                                    fontFamily:
+                                        GoogleFonts.notoSans().fontFamily,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                   textAlign: TextAlign.center,
                                 ),
                               ),

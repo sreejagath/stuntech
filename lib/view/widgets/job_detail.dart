@@ -13,7 +13,7 @@ class JobDetail extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.7,
+          width: MediaQuery.of(context).size.width * 0.65,
           child: Column(
             children: [
               Row(
@@ -21,7 +21,8 @@ class JobDetail extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      'May 31st (Wednesday) 08: 00 ~ 17: 00 (break 60 minutes)',
+                      '5月 31日（水）08 : 00 ~ 17 : 00（休憩60分）',
+                      //'May 31st (Wednesday) 08: 00 ~ 17: 00 (break 60 minutes)',
                       style: TextStyle(
                         fontSize: 12,
                         color: black,
@@ -41,7 +42,8 @@ class JobDetail extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      '3-916-17 Shinonome-cho, Sapporo-shi, Hokkaido',
+                      '北海道札幌市東雲町3丁目916番地17号',
+                      //'3-916-17 Shinonome-cho, Sapporo-shi, Hokkaido',
                       style: TextStyle(
                         fontSize: 12,
                         color: black,
@@ -58,7 +60,8 @@ class JobDetail extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      'Transp. Costs ¥ 300',
+                      '交通費 300円',
+                      //'Transp. Costs ¥ 300',
                       style: TextStyle(
                         fontSize: 12,
                         color: black,
@@ -73,8 +76,9 @@ class JobDetail extends StatelessWidget {
             ],
           ),
         ),
+        const Spacer(),
         Container(
-          width: MediaQuery.of(context).size.width * 0.2,
+          width: MediaQuery.of(context).size.width * 0.23,
           decoration: BoxDecoration(
             borderRadius:
                 const BorderRadius.all(Radius.circular(5)),
@@ -82,12 +86,14 @@ class JobDetail extends StatelessWidget {
               color: const Color(0xFFFAAA14),
             ),
           ),
-          padding: const EdgeInsets.all(10),
+          alignment: Alignment.center,
+          padding: const EdgeInsets.all(5),
           child: Row(
             children: [
               Expanded(
                   child: Text(
-                'Recruitment number 3 people',
+                    '募集人数 3人',
+                //'Recruitment number 3 people',
                 style: TextStyle(
                   fontSize: 12,
                   color: const Color(0xFFFAAA14),
