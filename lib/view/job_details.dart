@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stuntech/constants/color.dart';
 import 'package:stuntech/view/reactions.dart';
 import 'package:stuntech/view/widgets/care_giving.dart';
@@ -8,10 +11,18 @@ import 'package:stuntech/view/widgets/header.dart';
 import 'package:stuntech/view/widgets/job_detail.dart';
 import 'package:stuntech/view/widgets/reaction.dart';
 
-class JobDetails extends StatelessWidget {
+class JobDetails extends StatefulWidget {
   const JobDetails({Key? key}) : super(key: key);
 
   @override
+  State<JobDetails> createState() => _JobDetailsState();
+}
+
+class _JobDetailsState extends State<JobDetails> {
+  
+  Completer<GoogleMapController> _controller = Completer();
+  @override
+
   Widget build(BuildContext context) {
     var selectItems = ['Business', 'Job', 'Flow of', 'trea', 'Application'];
     return Scaffold(
@@ -88,8 +99,7 @@ class JobDetails extends StatelessWidget {
                             //'Residential pay nursing home Himawari Club',
                             style: TextStyle(
                               fontSize: 12,
-                              color:
-                                  const Color(0xFF303030).withOpacity(0.45),
+                              color: const Color(0xFF303030).withOpacity(0.45),
                               fontFamily: GoogleFonts.notoSans().fontFamily,
                               fontWeight: FontWeight.w500,
                             ),
@@ -102,14 +112,17 @@ class JobDetails extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
               child: const Reactions(),
             ),
             const SizedBox(
               height: 10,
             ),
             Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: SizedBox(
                   height: 20,
                   child: Row(
@@ -145,6 +158,7 @@ class JobDetails extends StatelessWidget {
             // const SizedBox(
             //   height: 10,
             // ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Column(
@@ -180,11 +194,17 @@ class JobDetails extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Row(
-                    mainAxisAlignment:MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.arrow_drop_down, color: Colors.grey, size: 20,),
+                      Icon(
+                        Icons.arrow_drop_down,
+                        color: Colors.grey,
+                        size: 20,
+                      ),
                       const SizedBox(
                         width: 10,
                       ),
@@ -248,7 +268,8 @@ class JobDetails extends StatelessWidget {
               thickness: 1,
             ),
             Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Column(children: [
                   Row(
                     children: [
@@ -540,14 +561,18 @@ class JobDetails extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.9,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey),
+                        //color: Colors.grey
+                        ),
                     alignment: Alignment.center,
-                    child: Text('Google Map',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
-                            fontFamily: GoogleFonts.notoSans().fontFamily,
-                            fontWeight: FontWeight.bold)),
+                    child:  GoogleMap(initialCameraPosition: CameraPosition(target:
+      LatLng(-33.870840,151.206286),
+        zoom: 12),),
+                    // Text('Google Map',
+                    //     style: TextStyle(
+                    //         fontSize: 14,
+                    //         color: Colors.white,
+                    //         fontFamily: GoogleFonts.notoSans().fontFamily,
+                    //         fontWeight: FontWeight.bold)),
                   ),
                   // Container(
                   //   height: 200,
@@ -556,7 +581,7 @@ class JobDetails extends StatelessWidget {
                   //   //     borderRadius: BorderRadius.circular(10),
                   //   //     color: Colors.grey),
                   //   //alignment: Alignment.center,
-                  //   child: Image.asset('assets/images/map.png', 
+                  //   child: Image.asset('assets/images/map.png',
                   //   height: 250,
                   //   width: MediaQuery.of(context).size.width,
                   //   fit: BoxFit.cover,
