@@ -20,59 +20,53 @@ class JobDetails extends StatelessWidget {
           children: [
             HeaderImage(),
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        child: Text(
-                          //'[Sapporo, Hokkaido] Nursing care business in a short stay (mainly bathing assistance), please!' ,
-                          '【北海道札幌市】ショートステイでの介護業      務 (主に入浴介助) お願いします！',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: GoogleFonts.notoSans().fontFamily,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: Text(
+                      //'[Sapporo, Hokkaido] Nursing care business in a short stay (mainly bathing assistance), please!' ,
+                      '【北海道札幌市】ショートステイでの介護業      務 (主に入浴介助) お願いします！',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: GoogleFonts.notoSans().fontFamily,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Container(
-                          color: const Color(0xFFEEAB40).withOpacity(0.1),
-                          padding: const EdgeInsets.all(10),
-                          child: Text(
-                            '介護付き有料老人ホーム',
-                            //'Paid nursing home for elderly',
-                            style: TextStyle(
-                              fontSize: 10,
-                              color: mainText,
-                              fontFamily: GoogleFonts.notoSans().fontFamily,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Spacer(),
-                        Text(
-                          '6,000円',
-                          //'6,000 yen',
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        color: const Color(0xFFEEAB40).withOpacity(0.1),
+                        //padding: const EdgeInsets.all(10),
+                        child: Text(
+                          '介護付き有料老人ホーム',
+                          //'Paid nursing home for elderly',
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 12,
+                            color: mainText,
                             fontFamily: GoogleFonts.notoSans().fontFamily,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                      Spacer(),
+                      Text(
+                        '6,000円',
+                        //'6,000 yen',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontFamily: GoogleFonts.notoSans().fontFamily,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   // const SizedBox(
                   //   height: 10,
@@ -81,42 +75,42 @@ class JobDetails extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Column(
-                      children: [
-                        JobDetail(),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              '住宅型有料老人ホームひまわり倶楽部',
-                              //'Residential pay nursing home Himawari Club',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color:
-                                    const Color(0xFF303030).withOpacity(0.45),
-                                fontFamily: GoogleFonts.notoSans().fontFamily,
-                                fontWeight: FontWeight.w500,
-                              ),
+                  Column(
+                    children: [
+                      JobDetail(),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            '住宅型有料老人ホームひまわり倶楽部',
+                            //'Residential pay nursing home Himawari Club',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color:
+                                  const Color(0xFF303030).withOpacity(0.45),
+                              fontFamily: GoogleFonts.notoSans().fontFamily,
+                              fontWeight: FontWeight.w500,
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                        ],
+                      ),
+                    ],
                   )
                 ],
               ),
             ),
-            const Reactions(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, ),
+              child: const Reactions(),
+            ),
             const SizedBox(
               height: 10,
             ),
             Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: SizedBox(
                   height: 20,
                   child: Row(
                     children: [
@@ -152,7 +146,7 @@ class JobDetails extends StatelessWidget {
             //   height: 10,
             // ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Column(
                 children: [
                   Row(
@@ -173,7 +167,7 @@ class JobDetails extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.9,
+                        width: MediaQuery.of(context).size.width * 0.8,
                         child: Text(
                             '''東海地方を中心に、中部・関東・関西で約80施設の介護施設を運営しております。当社は3大都市圏で展開している強みを活かした、「住み替え自由」の介護サービスを提供しています。また、ご利用者様ひとりひとりに沿ったケアの実践だけでなく、ご家族様にも安心して預けていただけるようなサポート体''',
                             //'''We operate about 80 long-term care facilities in the Chubu, Kanto, and Kansai regions, mainly in the Tokai region. We provide "free relocation" long-term care services that take advantage of our strengths in the three major metropolitan areas. In addition to practicing care tailored to each user, a support body that allows families to leave it with peace of mind.''',
@@ -184,6 +178,23 @@ class JobDetails extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             )),
                       ),
+                    ],
+                  ),
+                  SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment:MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.arrow_drop_down, color: Colors.grey, size: 20,),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text('もっとみる',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.w500,
+                          )),
                     ],
                   ),
                   const SizedBox(
@@ -237,7 +248,7 @@ class JobDetails extends StatelessWidget {
               thickness: 1,
             ),
             Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Column(children: [
                   Row(
                     children: [
@@ -320,7 +331,7 @@ class JobDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.9,
+                              width: MediaQuery.of(context).size.width * 0.8,
                               child: Text('''・リハビリ機器の誘導
 ・書類業務
 ・送迎（AT小型車のシエンタ使用）
@@ -375,27 +386,35 @@ class JobDetails extends StatelessWidget {
                   Wrap(
                     direction: Axis.horizontal,
                     children: const [
-                      CareGivingItem(title: 'treatment 1'),
+                      CareGivingItem(title: '待遇その１'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'treatment 2'),
+                      CareGivingItem(title: 'サンプル待遇その２'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'sample treatment'),
+                      CareGivingItem(title: '待遇その３'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'treatment 3'),
+                      CareGivingItem(title: 'サンプル待遇その４'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'treatment 4'),
+                      CareGivingItem(title: '待遇その５'),
                       SizedBox(
                         width: 10,
                       ),
-                      CareGivingItem(title: 'treatment 5'),
+                      CareGivingItem(title: '待遇その6'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: '待遇その７'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CareGivingItem(title: 'サンプル待遇その８'),
                       SizedBox(
                         width: 10,
                       ),
@@ -428,11 +447,15 @@ class JobDetails extends StatelessWidget {
                       Wrap(
                         direction: Axis.horizontal,
                         children: const [
-                          CareGivingItem(title: 'Social work'),
+                          CareGivingItem(title: '社会福祉士'),
                           SizedBox(
                             width: 10,
                           ),
-                          CareGivingItem(title: 'long term foodist'),
+                          CareGivingItem(title: '介護食士1級'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          CareGivingItem(title: '社会福祉主事'),
                           SizedBox(
                             width: 10,
                           ),
@@ -519,8 +542,7 @@ class JobDetails extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey),
                     alignment: Alignment.center,
-                    child: const Text('Map',
-                        style: TextStyle(fontSize: 20, color: Colors.white)),
+                    child: Image.asset('assets/images/map.png'),
                   ),
                   const SizedBox(
                     height: 10,
@@ -529,7 +551,7 @@ class JobDetails extends StatelessWidget {
                     children: [
                       Container(
                         padding: const EdgeInsets.all(10.0),
-                        width: MediaQuery.of(context).size.width * 0.9,
+                        width: MediaQuery.of(context).size.width * 0.8,
                         child: Text('北海道札幌市 XXXX 区 XXX 条 XX 丁目 XX 番 XX 号',
                             //'Sapporo City, Hokkaido XXXX Ward XXX Article XX Chome XX No. XX',
                             style: TextStyle(
@@ -548,7 +570,7 @@ class JobDetails extends StatelessWidget {
                     children: [
                       Container(
                         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        width: MediaQuery.of(context).size.width * 0.9,
+                        width: MediaQuery.of(context).size.width * 0.8,
                         child: Text('''・”XXXXXX” 駅から徒歩 “XX” 分
 ・”XXXXXX” から車で “XX” 分
 ・”XXXXXX” からバイクで “XX” 分''',
@@ -654,8 +676,8 @@ class JobDetails extends StatelessWidget {
                     height: 20,
                   ),
                   Row(children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.9,
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.8,
                       child: Text(
                         '''金髪などの派手な髪型は規定上、お断りいたします。
 
@@ -722,7 +744,7 @@ class JobDetails extends StatelessWidget {
                           Row(
                             children: [
                               Container(
-                                width: MediaQuery.of(context).size.width * 0.9,
+                                width: MediaQuery.of(context).size.width * 0.8,
                                 padding: const EdgeInsets.only(
                                     left: 10.0, right: 10.0),
                                 child: Text(
@@ -788,7 +810,7 @@ class JobDetails extends StatelessWidget {
                                 const EdgeInsets.only(left: 10.0, right: 10.0),
                             child: Row(
                               children: [
-                                Container(
+                                SizedBox(
                                   width:
                                       MediaQuery.of(context).size.width * 0.6,
                                   child: Text('介護付き有料老人ホームソラスト小松原',
@@ -839,7 +861,7 @@ class JobDetails extends StatelessWidget {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        content: Container(
+                        content: SizedBox(
                           height: MediaQuery.of(context).size.height * 0.35,
                           child: Column(children: [
                             Image.network(
@@ -911,7 +933,7 @@ class JobDetails extends StatelessWidget {
                 ),
                 alignment: Alignment.center,
                 child: Text(
-                  'Apply',
+                  '応募する',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.white,

@@ -36,7 +36,7 @@ class Reactions extends StatelessWidget {
                   width: 10,
                 ),
                 const Text(
-                  '999',
+                  '999+',
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
@@ -96,7 +96,7 @@ class Reactions extends StatelessWidget {
                   width: 10,
                 ),
                 const Text(
-                  '999 +',
+                  '999+',
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
