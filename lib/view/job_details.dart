@@ -542,8 +542,26 @@ class JobDetails extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey),
                     alignment: Alignment.center,
-                    child: Image.asset('assets/images/map.png'),
+                    child: Text('Google Map',
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold)),
                   ),
+                  // Container(
+                  //   height: 200,
+                  //   width: MediaQuery.of(context).size.width ,
+                  //   // decoration: BoxDecoration(
+                  //   //     borderRadius: BorderRadius.circular(10),
+                  //   //     color: Colors.grey),
+                  //   //alignment: Alignment.center,
+                  //   child: Image.asset('assets/images/map.png', 
+                  //   height: 250,
+                  //   width: MediaQuery.of(context).size.width,
+                  //   fit: BoxFit.cover,
+                  //   ),
+                  // ),
                   const SizedBox(
                     height: 10,
                   ),
