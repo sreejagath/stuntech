@@ -18,18 +18,24 @@ class Reactions extends StatelessWidget {
         child: Row(
           children: [
             Row(
-              children: const [
-                Text(
-                  '😄',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
-                  ),
+              children:  [
+                Image.asset(
+                  'assets/images/smile.png',
+                  height: 30,
+                  width: 30,
+                  fit: BoxFit.cover,
                 ),
-                SizedBox(
+                // Text(
+                //   '😄',
+                //   style: TextStyle(
+                //     fontSize: 25,
+                //     fontWeight: FontWeight.w500,
+                //   ),
+                // ),
+                const SizedBox(
                   width: 10,
                 ),
-                Text(
+                const Text(
                   '999',
                   style: TextStyle(
                     fontSize: 12,
@@ -42,20 +48,26 @@ class Reactions extends StatelessWidget {
               width: 10,
             ),
             Row(
-              children: const [
-                Text(
-                  '🙂',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
-                  ),
+              children:  [
+                // Text(
+                //   '🙂',
+                //   style: TextStyle(
+                //     fontSize: 25,
+                //     fontWeight: FontWeight.w500,
+                //   ),
+                // ),
+                Image.asset(
+                  'assets/images/happy.png',
+                  height: 30,
+                  width: 30,
+                  fit: BoxFit.cover,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
-                Text(
+                const Text(
                   '999+',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),
@@ -66,20 +78,26 @@ class Reactions extends StatelessWidget {
               width: 10,
             ),
             Row(
-              children: const [
-                Text(
-                  '😔',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
-                  ),
+              children:  [
+                // Text(
+                //   '😔',
+                //   style: TextStyle(
+                //     fontSize: 25,
+                //     fontWeight: FontWeight.w500,
+                //   ),
+                // ),
+                Image.asset(
+                  'assets/images/sad.png',
+                  height: 30,
+                  width: 30,
+                  fit: BoxFit.cover,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
-                Text(
-                  '999',
-                  style: TextStyle(
+                const Text(
+                  '999 +',
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),

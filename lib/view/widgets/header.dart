@@ -12,8 +12,9 @@ class HeaderImage extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 0.4,
           width: double.infinity,
           color: Colors.blue,
-          child: Image.network(
-            'https://www.anbusrisaihomenursing.com/Assets/img/service_banner/home_nursing_service.webp',
+          child: Image.asset(
+            'assets/images/header.png',
+            //'https://www.anbusrisaihomenursing.com/Assets/img/service_banner/home_nursing_service.webp',
             fit: BoxFit.cover,
           )),
       Positioned(

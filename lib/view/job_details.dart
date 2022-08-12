@@ -25,13 +25,16 @@ class JobDetails extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(
-                        //'[Sapporo, Hokkaido] Nursing care business in a short stay (mainly bathing assistance), please!' ,
-                        '【北海道札幌市】ショートステイでの介護業       務 (主に入浴介助) お願いします！',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: GoogleFonts.notoSans().fontFamily,
-                          fontWeight: FontWeight.bold,
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        child: Text(
+                          //'[Sapporo, Hokkaido] Nursing care business in a short stay (mainly bathing assistance), please!' ,
+                          '【北海道札幌市】ショートステイでの介護業      務 (主に入浴介助) お願いします！',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
@@ -310,7 +313,7 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(children: [
                     Column(
@@ -352,13 +355,12 @@ class JobDetails extends StatelessWidget {
                         ]),
                   ]),
                   const SizedBox(
-                    height: 10,
+                    height: 30,
                   ),
                   Row(
                     children: [
-                      Text(
-                        '待遇',
-                        //'treatment',
+                      Text('待遇',
+                          //'treatment',
                           style: TextStyle(
                             fontSize: 14,
                             color: black,
@@ -368,7 +370,7 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Wrap(
                     direction: Axis.horizontal,
@@ -400,17 +402,16 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Container(),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(
                     children: [
-                      Text(
-                        '応募条件資格',
-                        //'Application conditions Qualifications',
+                      Text('応募条件資格',
+                          //'Application conditions Qualifications',
                           style: TextStyle(
                             fontSize: 14,
                             color: black,
@@ -420,7 +421,7 @@ class JobDetails extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(
                     children: [
@@ -439,13 +440,15 @@ class JobDetails extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Row(children: [
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            '持ち物',
-                            //'Belongings',
+                          Text('持ち物',
+                              //'Belongings',
                               style: TextStyle(
                                 fontSize: 14,
                                 color: black,
@@ -455,23 +458,22 @@ class JobDetails extends StatelessWidget {
                         ])
                   ]),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
-                  Row(children:  [
-                    Text(
-                      '''・ボールペン
+                  Row(children: [
+                    Text('''・ボールペン
 ・メモ帳
 ・ハンドタオル
 ・お薬辞典
 ・入浴介助の服
 ・着替え
-・クリアファイル''', 
-style: TextStyle(
-                                fontSize: 14,
-                                color: black,
-                                fontFamily: GoogleFonts.notoSans().fontFamily,
-                                fontWeight: FontWeight.w500,
-                              )
+・クリアファイル''',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: black,
+                          fontFamily: GoogleFonts.notoSans().fontFamily,
+                          fontWeight: FontWeight.w500,
+                        )
 //                       '''・Ballpoint pen
 //  ·  Notepad
 //  ·  Hand towel
@@ -479,21 +481,26 @@ style: TextStyle(
 // ・ Bathing assistance clothes
 // ・ Change of clothes
 //  ·  clear file''',
-)
+                        )
                   ]),
                   const SizedBox(
                     height: 10,
                   ),
-                  const ExpansionTile(
-                      title: Text('労働条件通知書')),
+                  ExpansionTile(
+                    title: Text('労働条件通知書',
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: black,
+                            fontFamily: GoogleFonts.notoSans().fontFamily,
+                            fontWeight: FontWeight.bold)),
+                  ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(
                     children: [
-                      Text(
-                        'アクセス方法',
-                        //'how to access',
+                      Text('アクセス方法',
+                          //'how to access',
                           style: TextStyle(
                             fontSize: 14,
                             color: black,
@@ -503,7 +510,7 @@ style: TextStyle(
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Container(
                     height: 200,
@@ -523,8 +530,7 @@ style: TextStyle(
                       Container(
                         padding: const EdgeInsets.all(10.0),
                         width: MediaQuery.of(context).size.width * 0.9,
-                        child: Text(
-                          '北海道札幌市 XXXX 区 XXX 条 XX 丁目 XX 番 XX 号',
+                        child: Text('北海道札幌市 XXXX 区 XXX 条 XX 丁目 XX 番 XX 号',
                             //'Sapporo City, Hokkaido XXXX Ward XXX Article XX Chome XX No. XX',
                             style: TextStyle(
                               fontSize: 13,
@@ -543,8 +549,7 @@ style: TextStyle(
                       Container(
                         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                         width: MediaQuery.of(context).size.width * 0.9,
-                        child: Text(
-                          '''・”XXXXXX” 駅から徒歩 “XX” 分
+                        child: Text('''・”XXXXXX” 駅から徒歩 “XX” 分
 ・”XXXXXX” から車で “XX” 分
 ・”XXXXXX” からバイクで “XX” 分''',
 //                           '''・ Walk “XX” minutes from “XXXXXX” station
@@ -564,9 +569,8 @@ style: TextStyle(
                   ),
                   Row(
                     children: [
-                      Text(
-                        '事業所連絡先番号',
-                        //'Office contact no.',
+                      Text('事業所連絡先番号',
+                          //'Office contact no.',
                           style: TextStyle(
                             fontSize: 14,
                             color: black,
@@ -655,12 +659,12 @@ style: TextStyle(
                       child: Text(
                         '''金髪などの派手な髪型は規定上、お断りいたします。
 
-新型コロナの感染対策といたしまして、下記の要綱に当てはまる方のご応募をお控え頂きますようよろしくお願いいたします。 ・発熱や咳の症状のある方
+新型コロナの感染対策といたしまして、下記の要綱に当てはまる方のご応募をお控え頂きますようよろしくお願いいたします。・発熱や咳の症状のある方
 ・同居人等、身近な方に同様の症状がある方
 ・濃厚接触者と認められた方
 ・過去14日以内に渡航歴がある方''',
 //                         '''
-// Flashy hairstyles such as blonde hair are not permitted by regulation. 
+// Flashy hairstyles such as blonde hair are not permitted by regulation.
 
 //  As a countermeasure against infection of the new corona, please refrain from applying for those who meet the following guidelines.・ Those who have fever or cough
 // ・ People who have similar symptoms, such as those living together
@@ -675,7 +679,7 @@ style: TextStyle(
                     )
                   ]),
                   const SizedBox(
-                    height: 10,
+                    height: 30,
                   ),
                   Row(
                     children: [
@@ -689,10 +693,10 @@ style: TextStyle(
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Container(
-                      height: 400,
+                      height: 450,
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -708,10 +712,10 @@ style: TextStyle(
                       alignment: Alignment.center,
                       child: Column(
                         children: [
-                          Image.network(
-                              'https://cdn.visitingangels.com/cgcimages/home-care-nurse-seniors-main.jpg',
-                              height: 170,
-                              fit: BoxFit.fill),
+                          Image.asset('assets/images/card.png',
+                              //'https://cdn.visitingangels.com/cgcimages/home-care-nurse-seniors-main.jpg',
+                              height: 200,
+                              fit: BoxFit.cover),
                           const SizedBox(
                             height: 10,
                           ),
@@ -722,7 +726,7 @@ style: TextStyle(
                                 padding: const EdgeInsets.only(
                                     left: 10.0, right: 10.0),
                                 child: Text(
-                                  '介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（正規雇用 / パート）',
+                                    '介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（正規雇用 / パート）',
                                     //'Long-term care pay nursing home Himawari Club long-term care / helper recruitment (regular employment / part-time)',
                                     style: TextStyle(
                                       fontSize: 14,
@@ -742,8 +746,7 @@ style: TextStyle(
                                 const EdgeInsets.only(left: 10.0, right: 10.0),
                             child: Row(
                               children: const [
-                                CareGivingItem(
-                                    title: '介護付き有料老人ホーム'),
+                                CareGivingItem(title: '介護付き有料老人ホーム'),
                               ],
                             ),
                           ),
@@ -755,10 +758,8 @@ style: TextStyle(
                                 const EdgeInsets.only(left: 10.0, right: 10.0),
                             child: Row(
                               children: const [
-                                Text(
-                                  '北海道札幌市東雲町3丁目916番地17号'
-                                )
-                                    //'3-916-17 Shinonome-cho, Sapporo-shi, Hokkaido')
+                                Text('北海道札幌市東雲町3丁目916番地17号')
+                                //'3-916-17 Shinonome-cho, Sapporo-shi, Hokkaido')
                               ],
                             ),
                           ),
@@ -772,7 +773,9 @@ style: TextStyle(
                               children: const [
                                 Text('正職員'),
                                 //Spacer(),
-                                SizedBox(width: 10,),
+                                SizedBox(
+                                  width: 10,
+                                ),
                                 Text('月収 25万 ~ 27万')
                               ],
                             ),
@@ -788,8 +791,7 @@ style: TextStyle(
                                 Container(
                                   width:
                                       MediaQuery.of(context).size.width * 0.6,
-                                  child: Text(
-                                    '介護付き有料老人ホームソラスト小松原',
+                                  child: Text('介護付き有料老人ホームソラスト小松原',
                                       //'Paid nursing home for the elderly Solasto Komatsubara',
                                       style: TextStyle(
                                         fontSize: 14,
@@ -823,7 +825,7 @@ style: TextStyle(
               width: MediaQuery.of(context).size.width * 0.2,
               child: const Icon(
                 Icons.favorite_border,
-                color: Color.fromARGB(255, 121, 121, 121),
+                color: Color.fromARGB(99, 121, 121, 121),
                 size: 35,
               ),
             ),
