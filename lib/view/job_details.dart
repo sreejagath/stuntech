@@ -12,7 +12,9 @@ import 'package:stuntech/view/widgets/job_detail.dart';
 import 'package:stuntech/view/widgets/reaction.dart';
 
 class JobDetails extends StatefulWidget {
-  const JobDetails({Key? key}) : super(key: key);
+  const JobDetails({Key? key, required this.jobDetails}) : super(key: key);
+
+  final jobDetails;
 
   @override
   State<JobDetails> createState() => _JobDetailsState();
@@ -22,8 +24,10 @@ class _JobDetailsState extends State<JobDetails> {
   Completer<GoogleMapController> _controller = Completer();
   @override
   Widget build(BuildContext context) {
+    print('On home page : ${widget.jobDetails}');
     var selectItems = ['事業所概要 ', '仕事の内容', '1日の流れ', '待遇', '応募条件', '持ち物'];
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: DefaultTabController(
           length: selectItems.length,
@@ -39,8 +43,9 @@ class _JobDetailsState extends State<JobDetails> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: Text(
+                        '${widget.jobDetails[0].result.jobTitle}',
                         //'[Sapporo, Hokkaido] Nursing care business in a short stay (mainly bathing assistance), please!' ,
-                        '【北海道札幌市】ショートステイでの介護業      務 (主に入浴介助) お願いします！',
+                        //'【北海道札幌市】ショートステイでの介護業      務 (主に入浴介助) お願いします！',
                         style: TextStyle(
                           fontSize: 16,
                           fontFamily: GoogleFonts.notoSans().fontFamily,
